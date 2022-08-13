@@ -1,0 +1,38 @@
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="style.css" />
+<link rel="preload" href="0.png" as="image" crossorigin />
+<link rel="preload" href="1.png" as="image" crossorigin />
+<link rel="preload" href="2.png" as="image" crossorigin />
+<link rel="preload" href="3.png" as="image" crossorigin />
+<link rel="preload" href="4.png" as="image" crossorigin />
+<link rel="preload" href="5.png" as="image" crossorigin />
+<link rel="preload" href="6.png" as="image" crossorigin />
+<link rel="preload" href="7.png" as="image" crossorigin />
+<link rel="preload" href="8.png" as="image" crossorigin />
+<link rel="preload" href="9.png" as="image" crossorigin />
+<link rel="preload" href="pinpon.ogg" as="audio" crossorigin />
+<script src="script.js"></script>
+<title>仕方がない</title>
+<div id="instructions">
+  Welcome to the OBS counter widget!<br />
+  This page will display a number for five seconds and hide it afterwards.<br />
+  It can be useful for counting some events that occur during a stream.<br />
+  Add this to OBS using the Browser source. After that, right-click the source
+  and choose "Interact".<br />
+  Left-click anywhere in the Interact window to increase the counter by 1.<br />
+  Right-click to assign a custom value to the counter.<br />
+  The counter value persists accross OBS restarts.<br />
+  Do either of those now to hide these instructions. They will never be shown
+  again.<br />
+</div>
+<span id="counter">
+  0
+</span>
+<audio id="audio">
+  <source src="pinpon.ogg" type="audio/ogg" />
+</audio>
+<div id="custom">
+  Enter custom counter value: <input type="text" id="customValue" /><button type="button" id="customButton">
+    Set value
+  </button>
+</div>

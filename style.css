@@ -1,0 +1,31 @@
+body {
+  background-color: rgba(0, 0, 0, 0);
+}
+#custom,
+#instructions {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: red;
+  font-family: monospace;
+}
+#custom {
+  font-size: 40pt;
+}
+#instructions {
+  font-size: 20pt;
+}
+#counter,
+#custom {
+  display: none;
+}
+#customValue {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+#customButton {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: lightgreen;
+}
+::selection {
+  background-color: rgba(0, 0, 0, 0);
+}
