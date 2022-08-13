@@ -15,7 +15,7 @@ function fadeOut (counter) {
 function generateCounterImage (value) {
   return String(value)
     .split('')
-    .map(x => `<img src="/${x}.png">`)
+    .map(x => `<img src="${x}.png">`)
     .join('')
 }
 
