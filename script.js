@@ -35,11 +35,7 @@ function handleClick (event) {
 }
 
 document.addEventListener('DOMContentLoaded', event => {
-  if (!location.href.includes('?')) location.href += '?'
   const params = new URLSearchParams(location.search)
-  if (params.has('green')) {
-    document.body.classList.replace('transparent', 'green')
-  }
   if (params.get('counter')) {
     countername = `counter_${params.get('counter')}`
   }
