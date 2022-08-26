@@ -1,4 +1,5 @@
 let counter
+let countername = 'counter'
 
 function fadeOut (counter) {
   function fadeOutInner (counter) {
@@ -26,7 +27,7 @@ function handleClick (event) {
   counter.style.opacity = 1
   counter.dataset.value = +counter.dataset.value + 1
   counter.innerHTML = generateCounterImage(counter.dataset.value)
-  window.localStorage.setItem('counter', counter.dataset.value)
+  window.localStorage.setItem(countername, counter.dataset.value)
   const audio = document.getElementById('audio')
   audio.currentTime = 0
   audio.play()
@@ -34,11 +35,16 @@ function handleClick (event) {
 }
 
 document.addEventListener('DOMContentLoaded', event => {
-  if (new URLSearchParams(location.search).get('green')) {
+  if (!location.href.includes('?')) location.href += '?'
+  const params = new URLSearchParams(location.search)
+  if (params.get('green')) {
     document.body.classList.replace('transparent', 'green')
   }
+  if (params.get('counter')) {
+    countername = `counter_${params.get('counter')}`
+  }
   counter = document.getElementById('counter')
-  counter.dataset.value = window.localStorage.getItem('counter') || -1
+  counter.dataset.value = window.localStorage.getItem(countername) || -1
   counter.innerHTML = generateCounterImage(counter.dataset.value)
   if (counter.dataset.value !== '-1') {
     document.getElementById('instructions').style.display = 'none'
@@ -66,7 +72,7 @@ document.addEventListener('DOMContentLoaded', event => {
       +customCounter >= 0
     ) {
       counter.dataset.value = +customCounter - 1
-      window.localStorage.setItem('counter', +customCounter - 1)
+      window.localStorage.setItem(countername, +customCounter - 1)
     }
     document.getElementById('custom').style.display = 'none'
     document.addEventListener('click', handleClick)
