@@ -34,6 +34,9 @@ function handleClick (event) {
 }
 
 document.addEventListener('DOMContentLoaded', event => {
+  if (new URLSearchParams(location.search).get('green')) {
+    document.body.classList.replace('transparent', 'green')
+  }
   counter = document.getElementById('counter')
   counter.dataset.value = window.localStorage.getItem('counter') || -1
   counter.innerHTML = generateCounterImage(counter.dataset.value)
