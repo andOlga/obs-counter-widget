@@ -73,6 +73,7 @@ document.addEventListener('DOMContentLoaded', event => {
     }
     document.getElementById('custom').style.display = 'none'
     document.addEventListener('click', handleClick)
+    if (event.type !== 'click') document.body.click()
   }
 
   document.getElementById('customValue').addEventListener('keydown', updateCustom)
