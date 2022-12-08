@@ -59,7 +59,8 @@ document.addEventListener('DOMContentLoaded', event => {
     document.getElementById('customValue').focus()
   })
 
-  document.getElementById('customButton').addEventListener('click', event => {
+  function updateCustom(event) {
+    if (event.type === 'keydown' && event.key !== 'Enter') return
     event.preventDefault()
     const customCounter = document.getElementById('customValue').value
     if (
@@ -72,5 +73,8 @@ document.addEventListener('DOMContentLoaded', event => {
     }
     document.getElementById('custom').style.display = 'none'
     document.addEventListener('click', handleClick)
-  })
+  }
+
+  document.getElementById('customValue').addEventListener('keydown', updateCustom)
+  document.getElementById('customButton').addEventListener('click', updateCustom)
 })
