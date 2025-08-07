@@ -1,3 +1,5 @@
+# This repository is unmaintained. Up-to-date version on [Codeberg](https://codeberg.org/andOlga/obs-counter-widget).
+
 # obs-counter-widget
 
 A "counter" widget for OBS -- a simple way to track how many times a certain event has happened during a stream, or even across multiple streams,
